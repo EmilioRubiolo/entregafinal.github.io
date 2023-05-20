@@ -1,0 +1,178 @@
+/*El index, creo que quedo mucho mejor que antes, la parte de las card creo que desencaja un poco
+pero no me decido como cambiarlo y no quiero perder taanto tiempo en eso si queda decente*/
+
+@media (max-width: 600px) {
+    .inicio {
+        width: 100%;
+
+        .inicio--titulo {
+
+            background-image: url(../assets/img/InicioR.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            div {
+                color: $GRISES-4-hex;
+                padding-right: 5rem;
+                padding-left: 5rem;
+                padding-top: 10rem;
+                padding-bottom: 10rem;
+
+                h1 {
+                    font-size: 3rem;
+                    font-weight: 700;
+                    color: $GRISES-4-hex;
+                }
+
+            }
+        }
+
+        section {
+            .presentacion {
+                .presentacion--fondo {
+                    background-image: url(../assets/img/Presentacion.jpg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    width: 100%;
+                    margin-top: 10vh;
+                    margin-bottom: 10vh;
+                    color: $GRISES-4-hex;
+                    text-align: center;
+                    padding-top: 2rem;
+                    padding-bottom: 2rem;
+
+                    .presentacion--texto {
+                        h3 {
+                            font-size: 2rem;
+                            font-weight: 700;
+                        }
+
+                        p {
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    div {
+                        margin-top: 2rem;
+                        margin-bottom: 2rem;
+
+                        iframe {
+                            width: 360px;
+                            height: 215px;
+                        }
+                    }
+                }
+            }
+        }
+        .intromagic {
+            color: $ROJOS-3-hex;
+            text-align: center;
+            margin-bottom: 10vh;
+            h2 {
+                font-size: 2rem;
+                font-weight: 700;
+            }
+        }
+        .magic {
+            text-align: center;
+            div {
+                a{
+                    font-size: 2rem;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .inicio {
+        width: 100%;
+
+        .inicio--titulo {
+
+            background-image: url(../assets/img/Inicio.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            div {
+                color: $GRISES-4-hex;
+                padding-right: 5rem;
+                padding-left: 5rem;
+                padding-top: 10rem;
+                padding-bottom: 10rem;
+
+                h1 {
+                    font-size: 3rem;
+                    font-weight: 700;
+                    color: $GRISES-4-hex;
+                }
+
+            }
+        }
+
+        section {
+            .presentacion {
+                .presentacion--fondo {
+                    background-image: url(../assets/img/Presentacion.jpg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    width: 60%;
+                    margin-left: 20%;
+                    margin-right: 20%;
+                    margin-top: 10vh;
+                    margin-bottom: 10vh;
+                    padding: 2rem;
+                    color: $GRISES-4-hex;
+                    text-align: center;
+
+                    .presentacion--texto {
+                        margin-left: 30%;
+                        width: 40%;
+
+                        h3 {
+                            font-size: 2rem;
+                            font-weight: 700;
+                        }
+
+                        p {
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    div {
+                        margin-top: 2rem;
+                        margin-bottom: 2rem;
+
+                        iframe {
+                            width: 550px;
+                            height: 315px;
+                        }
+                    }
+                }
+            }
+        }
+        .intromagic {
+            color: $ROJOS-3-hex;
+            text-align: center;
+            margin-bottom: 10vh;
+            h2 {
+                font-size: 2rem;
+                font-weight: 700;
+            }
+        }
+        .magic {
+            text-align: center;
+            div {
+                a{
+                    font-size: 2rem;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

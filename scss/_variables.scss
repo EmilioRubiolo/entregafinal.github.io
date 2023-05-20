@@ -1,0 +1,21 @@
+/*
+EJ: $largo: 100%;
+ahora si en cualquier carpeta pongo 
+EJ: widht: $largo;  el widht tendra el valor de 100%
+asi, cuando quiera cambiar ese tamaño en varios lugares
+no tengo que ir seleccionando uno por uno, lo cambio de una
+*/
+
+/* Color Theme Swatches in Hex --- Vi que desde Adobe colors da
+directamente la opcion de copiar para Sass, habia que implementarlo */ 
+$ROJOS-1-hex: #3D100F;
+$ROJOS-2-hex: #D67672;
+$ROJOS-3-hex: #BD332D;
+$ROJOS-4-hex: #3D2221;
+$ROJOS-5-hex: #8A2521;
+
+$GRISES-1-hex: #585859;
+$GRISES-2-hex: #3F3F40;
+$GRISES-3-hex: #BDBEBF;
+$GRISES-4-hex: #F2F2F2;
+$GRISES-5-hex: #D9D9D9;

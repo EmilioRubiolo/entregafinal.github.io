@@ -1,0 +1,31 @@
+/*Amando scss gracias mixins*/
+
+@mixin caja--clases {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: $GRISES-4-hex;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+}
+
+@mixin caja--popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+}

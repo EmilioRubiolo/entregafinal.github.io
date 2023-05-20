@@ -1,0 +1,17 @@
+/* En "base" tenemos el conjunto de @import (cada uno tiene los estilos que le damos a cada pagina),
+para poder movernos comodos y rapido cada vez que queremos hacer un cambio. */
+
+@import "variables.scss";
+@import "reset.scss";
+@import "mixins.scss";
+@import "fonts.scss";
+@import "utilidades.scss";
+
+@import "header.scss";
+@import "footer.scss";
+@import "inicio.scss";
+@import "clases.scss";
+@import "razas.scss";
+@import "trasfondo.scss";
+@import "contacto.scss";
+@import "error.scss";

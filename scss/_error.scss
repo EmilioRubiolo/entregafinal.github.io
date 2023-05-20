@@ -1,0 +1,18 @@
+.error {
+    height: 90vh;
+    .error--fondo {
+        background-image: url(../assets/img/404.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 90vh;
+        .error--texto {
+            text-align: center;
+            color: $GRISES-4-hex;
+            h1 {
+                padding-top: 30vh;
+                font-size: 4rem;
+            }
+        }
+    }
+}

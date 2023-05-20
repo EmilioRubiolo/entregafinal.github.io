@@ -1,0 +1,56 @@
+/*Cambios realizados para la seccion header.
+Voy a utilizar el mismo header en todas las paginas.
+Me aconsejaron centrar el header, agrande un poco el contenido porque considero que se ve mas llamativo
+tuve que hacerlo en medias para que quede responsivo, en el celular los elementos al medio no quedaban bien*/
+
+
+@media (max-width: 600px) {
+    .header{
+        border-bottom: 2px solid $ROJOS-3-hex;
+        nav{
+            div{
+                a{
+                    img{
+                        width: 10rem;
+                        height: 5rem;
+                    }
+                }
+                div{
+                    div{
+                        a{
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media (min-width: 600px){
+    .header{
+        border-bottom: 2px solid $ROJOS-3-hex;
+        nav{
+            margin-left: 25%;
+            margin-right: 25%;
+            div{
+                a{
+                    img{
+                        width: 10rem;
+                        height: 5rem;
+                    }
+                }
+                div{
+                    div{
+                        a{
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

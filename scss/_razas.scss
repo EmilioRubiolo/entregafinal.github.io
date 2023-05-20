@@ -1,0 +1,160 @@
+/*uy aca fue un dolor de cabeza, pero bueno el carrusel quedo bien al final asi que nada
+sufri pero valio la pena*/
+@media (max-width: 1000px) {
+    .razas {
+        .razas--titulo {
+        
+            background-image: url(../assets/img/razatitulo.jpeg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+    
+            div {
+                color: $GRISES-4-hex;
+                padding-right: 5rem;
+                padding-left: 5rem;
+                padding-top: 10rem;
+                padding-bottom: 10rem;
+    
+                h1 {
+                    font-size: 3rem;
+                    font-weight: 700;
+                    color: $GRISES-4-hex;
+                }
+    
+            }
+        }
+        .razas--carrusel {
+            background-image: url(../assets/img/fondocarru.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            text-align: center;
+            margin-top: 10vh;
+            margin-bottom: 10vh;
+            section {
+                .carrusel {
+                    img {
+                        height: 600px;
+                        width: 100%;
+                        filter: brightness(0.7);
+                    }
+                }
+            }
+        }
+        .razas--texto {
+            text-align: center;
+            margin-left: 10%;
+            width: 80%;
+            margin-top: 5vh;
+            margin-bottom: 5vh;
+            h3 {
+                font-size: 1.5rem;
+            }
+            span {
+                color: $ROJOS-3-hex;
+            }
+        }
+        .razas--video {
+            margin-bottom: 10vh;
+            div {
+                text-align: center;
+                p {
+                    margin-bottom: 5vh;
+                    font-size: 1.5rem;
+                }
+                div{
+                    div{
+                        iframe {
+                            width: 360px;
+                            height: 215px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1000px) {
+    .razas {
+        .razas--titulo {
+            background-image: url(../assets/img/razatitulo.jpeg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+            div {
+                color: $GRISES-4-hex;
+                padding-right: 5rem;
+                padding-left: 5rem;
+                padding-top: 10rem;
+                padding-bottom: 10rem;
+    
+                h1 {
+                    font-size: 3rem;
+                    font-weight: 700;
+                    color: $GRISES-4-hex;
+                }
+    
+            }
+        }
+        .razas--carrusel {
+            background-image: url(../assets/img/fondocarru.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            text-align: center;
+            margin-top: 10vh;
+            margin-bottom: 5vh;
+            section {
+                margin-left: 35%;
+                width: 30%;
+                .carrusel {
+                    img {
+                        height: 600px;
+                        width: 100%;
+                        filter: brightness(0.8);
+                    }
+                }
+            }
+        }
+        .razas--texto {
+            text-align: center;
+            margin-left: 35%;
+            width: 30%;
+            margin-top: 5vh;
+            margin-bottom: 5vh;
+            h3 {
+                font-size: 1.5rem;
+            }
+            span {
+                color: $ROJOS-3-hex;
+            }
+        }
+        .razas--video {
+            margin-bottom: 10vh;
+            div {
+                text-align: center;
+                p {
+                    margin-bottom: 5vh;
+                    font-size: 1.5rem;
+                }
+                div{
+                    div{
+                        iframe {
+                            width: 550px;
+                            height: 315px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

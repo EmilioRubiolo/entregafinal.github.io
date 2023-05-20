@@ -1,0 +1,164 @@
+/* Mi idea es que el footer sea un poco mas interactivo. */
+
+/*animacion para el boton de arriba del footer*/
+@keyframes float {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    .footer {
+        background-color: black;
+
+        div {
+            .izquierda {
+                text-align: center;
+
+                .paginas {
+                    margin-top: 0.7rem;
+
+                    a {
+                        color: $GRISES-5-hex;
+                        font-size: 1rem;
+                        padding-right: 1rem;
+                        padding-left: 1rem;
+                    }
+                }
+
+                .externos {
+                    a {
+                        color: $GRISES-5-hex;
+                        font-size: 1.5rem;
+                        padding-right: 0.5rem;
+                        padding-left: 0.5rem;
+                    }
+                }
+            }
+
+            .derecha {
+                text-align: center;
+
+                .arriba {
+                    animation: float infinite 3s ease-in-out ;
+                    color: $GRISES-5-hex;
+                    font-size: 2rem;
+                }
+
+                .logoch {
+                    margin-top: 1rem;
+
+                    a {
+                        img {
+                            width: 12rem;
+                            height: 3rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .tacto {
+            color: $GRISES-5-hex;
+            text-align: center;
+            margin-bottom: 2rem;
+
+            .contato {
+                text-decoration: underline;
+            }
+        }
+
+        .derechos {
+            border-top: 1px solid $GRISES-2-hex;
+            color: $GRISES-2-hex;
+            text-align: center;
+            padding-top: 2rem;
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .footer {
+        background-color: black;
+
+        div {
+            .izquierda {
+                text-align: center;
+
+                .paginas {
+                    margin-top: 0.7rem;
+
+                    a {
+                        color: $GRISES-5-hex;
+                        font-size: 1.2rem;
+                        padding-right: 1rem;
+                        padding-left: 1rem;
+                    }
+                }
+
+                .externos {
+                    a {
+                        color: $GRISES-5-hex;
+                        font-size: 2rem;
+                        padding-right: 1rem;
+                        padding-left: 1rem;
+                    }
+                }
+            }
+
+            .derecha {
+                text-align: center;
+
+                .arriba {
+                    animation: float infinite 3s ease-in-out ;
+                    color: $GRISES-5-hex;
+                    font-size: 2rem;
+                }
+
+                .logoch {
+                    margin-top: 1rem;
+
+                    a {
+                        img {
+                            width: 12rem;
+                            height: 3rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .tacto {
+            color: $GRISES-5-hex;
+            text-align: center;
+            margin-bottom: 2rem;
+
+            .contato {
+                text-decoration: underline;
+            }
+        }
+
+        .derechos {
+            border-top: 1px solid $GRISES-2-hex;
+            color: $GRISES-2-hex;
+            text-align: center;
+            padding-top: 2rem;
+        }
+    }
+}
+
+
+
+/* Me complique mucho la vida, estuve dando muchas vueltas con este footer pero decidi
+que se quede asi, no es mucho contenido pero siento que se ve un poco mejor que antes.
+Por lo general me cuesta un poco todavia ver por donde tirar para solucionar alguna que
+otra posicion o hacer que cada cosa quede en su lugar, supongo que con el tiempo
+aprendere cuando tengo que usar bien cada una de las cosas que me fueron enseñando */

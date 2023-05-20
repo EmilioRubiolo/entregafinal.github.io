@@ -1,0 +1,1694 @@
+@charset "UTF-8";
+/* En "base" tenemos el conjunto de @import (cada uno tiene los estilos que le damos a cada pagina),
+para poder movernos comodos y rapido cada vez que queremos hacer un cambio. */
+/*
+EJ: $largo: 100%;
+ahora si en cualquier carpeta pongo 
+EJ: widht: $largo;  el widht tendra el valor de 100%
+asi, cuando quiera cambiar ese tamaño en varios lugares
+no tengo que ir seleccionando uno por uno, lo cambio de una
+*/
+/* Color Theme Swatches in Hex --- Vi que desde Adobe colors da
+directamente la opcion de copiar para Sass, habia que implementarlo */
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Barlow", sans-serif;
+}
+
+/*Amando scss gracias mixins*/
+.bg-bisque {
+  background-color: rgb(243, 234, 223);
+}
+
+.centrar {
+  text-align: center;
+}
+
+/*Cambios realizados para la seccion header.
+Voy a utilizar el mismo header en todas las paginas.
+Me aconsejaron centrar el header, agrande un poco el contenido porque considero que se ve mas llamativo
+tuve que hacerlo en medias para que quede responsivo, en el celular los elementos al medio no quedaban bien*/
+@media (max-width: 600px) {
+  .header {
+    border-bottom: 2px solid #BD332D;
+  }
+  .header nav div a img {
+    width: 10rem;
+    height: 5rem;
+  }
+  .header nav div div div a {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 600px) {
+  .header {
+    border-bottom: 2px solid #BD332D;
+  }
+  .header nav {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  .header nav div a img {
+    width: 10rem;
+    height: 5rem;
+  }
+  .header nav div div div a {
+    font-size: 1.3rem;
+  }
+}
+/* Mi idea es que el footer sea un poco mas interactivo. */
+/*animacion para el boton de arriba del footer*/
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@media (max-width: 600px) {
+  .footer {
+    background-color: black;
+  }
+  .footer div .izquierda {
+    text-align: center;
+  }
+  .footer div .izquierda .paginas {
+    margin-top: 0.7rem;
+  }
+  .footer div .izquierda .paginas a {
+    color: #D9D9D9;
+    font-size: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .footer div .izquierda .externos a {
+    color: #D9D9D9;
+    font-size: 1.5rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  .footer div .derecha {
+    text-align: center;
+  }
+  .footer div .derecha .arriba {
+    animation: float infinite 3s ease-in-out;
+    color: #D9D9D9;
+    font-size: 2rem;
+  }
+  .footer div .derecha .logoch {
+    margin-top: 1rem;
+  }
+  .footer div .derecha .logoch a img {
+    width: 12rem;
+    height: 3rem;
+  }
+  .footer .tacto {
+    color: #D9D9D9;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .footer .tacto .contato {
+    text-decoration: underline;
+  }
+  .footer .derechos {
+    border-top: 1px solid #3F3F40;
+    color: #3F3F40;
+    text-align: center;
+    padding-top: 2rem;
+  }
+}
+@media (min-width: 600px) {
+  .footer {
+    background-color: black;
+  }
+  .footer div .izquierda {
+    text-align: center;
+  }
+  .footer div .izquierda .paginas {
+    margin-top: 0.7rem;
+  }
+  .footer div .izquierda .paginas a {
+    color: #D9D9D9;
+    font-size: 1.2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .footer div .izquierda .externos a {
+    color: #D9D9D9;
+    font-size: 2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .footer div .derecha {
+    text-align: center;
+  }
+  .footer div .derecha .arriba {
+    animation: float infinite 3s ease-in-out;
+    color: #D9D9D9;
+    font-size: 2rem;
+  }
+  .footer div .derecha .logoch {
+    margin-top: 1rem;
+  }
+  .footer div .derecha .logoch a img {
+    width: 12rem;
+    height: 3rem;
+  }
+  .footer .tacto {
+    color: #D9D9D9;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .footer .tacto .contato {
+    text-decoration: underline;
+  }
+  .footer .derechos {
+    border-top: 1px solid #3F3F40;
+    color: #3F3F40;
+    text-align: center;
+    padding-top: 2rem;
+  }
+}
+/* Me complique mucho la vida, estuve dando muchas vueltas con este footer pero decidi
+que se quede asi, no es mucho contenido pero siento que se ve un poco mejor que antes.
+Por lo general me cuesta un poco todavia ver por donde tirar para solucionar alguna que
+otra posicion o hacer que cada cosa quede en su lugar, supongo que con el tiempo
+aprendere cuando tengo que usar bien cada una de las cosas que me fueron enseñando */
+/*El index, creo que quedo mucho mejor que antes, la parte de las card creo que desencaja un poco
+pero no me decido como cambiarlo y no quiero perder taanto tiempo en eso si queda decente*/
+@media (max-width: 600px) {
+  .inicio {
+    width: 100%;
+  }
+  .inicio .inicio--titulo {
+    background-image: url(../assets/img/InicioR.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .inicio .inicio--titulo div {
+    color: #F2F2F2;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+  .inicio .inicio--titulo div h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #F2F2F2;
+  }
+  .inicio section .presentacion .presentacion--fondo {
+    background-image: url(../assets/img/Presentacion.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    color: #F2F2F2;
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .inicio section .presentacion .presentacion--fondo .presentacion--texto h3 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .inicio section .presentacion .presentacion--fondo .presentacion--texto p {
+    font-size: 1.5rem;
+  }
+  .inicio section .presentacion .presentacion--fondo div {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .inicio section .presentacion .presentacion--fondo div iframe {
+    width: 360px;
+    height: 215px;
+  }
+  .inicio .intromagic {
+    color: #BD332D;
+    text-align: center;
+    margin-bottom: 10vh;
+  }
+  .inicio .intromagic h2 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .inicio .magic {
+    text-align: center;
+  }
+  .inicio .magic div a {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+}
+@media (min-width: 600px) {
+  .inicio {
+    width: 100%;
+  }
+  .inicio .inicio--titulo {
+    background-image: url(../assets/img/Inicio.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .inicio .inicio--titulo div {
+    color: #F2F2F2;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+  .inicio .inicio--titulo div h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #F2F2F2;
+  }
+  .inicio section .presentacion .presentacion--fondo {
+    background-image: url(../assets/img/Presentacion.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    padding: 2rem;
+    color: #F2F2F2;
+    text-align: center;
+  }
+  .inicio section .presentacion .presentacion--fondo .presentacion--texto {
+    margin-left: 30%;
+    width: 40%;
+  }
+  .inicio section .presentacion .presentacion--fondo .presentacion--texto h3 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .inicio section .presentacion .presentacion--fondo .presentacion--texto p {
+    font-size: 1.5rem;
+  }
+  .inicio section .presentacion .presentacion--fondo div {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .inicio section .presentacion .presentacion--fondo div iframe {
+    width: 550px;
+    height: 315px;
+  }
+  .inicio .intromagic {
+    color: #BD332D;
+    text-align: center;
+    margin-bottom: 10vh;
+  }
+  .inicio .intromagic h2 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .inicio .magic {
+    text-align: center;
+  }
+  .inicio .magic div a {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+}
+/*Clases, aca puse unos popup que son feos esteticamente pero ahi estan, al menos dan la info
+me parece que quedo facherito todo lo otro, pero bueno si los popup son un rectangulo con texto*/
+@media (max-width: 600px) {
+  .clases {
+    width: 100%;
+  }
+  .clases .clases--titulo {
+    background-image: url(../assets/img/clasestitulo1.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+  }
+  .clases .clases--titulo div {
+    color: #F2F2F2;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+  .clases .clases--titulo div h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #F2F2F2;
+  }
+  .clases .clases--clases .clases--fondo {
+    background-image: url(../assets/img/clasefondo.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    padding: 2rem;
+    color: #F2F2F2;
+    text-align: center;
+  }
+  .clases .clases--clases .clases--fondo .clases--texto {
+    margin-top: 5vh;
+  }
+  .clases .clases--clases .clases--fondo .clases--texto h2 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .clases .clases--clases .clases--fondo .clases--texto p {
+    font-size: 1.5rem;
+  }
+  .clases .clases--clases .clases--fondo .lio {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases {
+    display: inline-block;
+    width: 50%;
+    border-radius: 50%;
+    text-align: left;
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--1 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Barbarian.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--2 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Bard.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--3 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Warlock.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--4 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Cleric.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--5 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Druid.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--6 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Ranger.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--7 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Fighter.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--8 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Sorcerer.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--9 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Wizard.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--10 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Monk.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--11 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Paladin.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--12 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Rogue.jpg);
+  }
+  .clases #popup1 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup1:target {
+    display: block;
+  }
+  .clases #popup2 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup2:target {
+    display: block;
+  }
+  .clases #popup3 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup3:target {
+    display: block;
+  }
+  .clases #popup4 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup4:target {
+    display: block;
+  }
+  .clases #popup5 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup5:target {
+    display: block;
+  }
+  .clases #popup6 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup6:target {
+    display: block;
+  }
+  .clases #popup7 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup7:target {
+    display: block;
+  }
+  .clases #popup8 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup8:target {
+    display: block;
+  }
+  .clases #popup9 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup9:target {
+    display: block;
+  }
+  .clases #popup10 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup10:target {
+    display: block;
+  }
+  .clases #popup11 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup11:target {
+    display: block;
+  }
+  .clases #popup12 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup12:target {
+    display: block;
+  }
+  .clases .clases--video {
+    margin-bottom: 10vh;
+  }
+  .clases .clases--video div {
+    text-align: center;
+  }
+  .clases .clases--video div p {
+    margin-bottom: 5vh;
+    font-size: 1.5rem;
+  }
+  .clases .clases--video div p span {
+    color: #BD332D;
+  }
+  .clases .clases--video div div div iframe {
+    width: 360px;
+    height: 215px;
+  }
+}
+@media (min-width: 600px) {
+  .clases {
+    width: 100%;
+  }
+  .clases .clases--titulo {
+    background-image: url(../assets/img/clasestitulo1.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+  }
+  .clases .clases--titulo div {
+    color: #F2F2F2;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+  .clases .clases--titulo div h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #F2F2F2;
+  }
+  .clases .clases--clases .clases--fondo {
+    background-image: url(../assets/img/clasefondo1.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    padding: 2rem;
+    color: #F2F2F2;
+    text-align: left;
+  }
+  .clases .clases--clases .clases--fondo .clases--texto {
+    width: 40%;
+    margin-top: 5vh;
+    margin-left: 5%;
+  }
+  .clases .clases--clases .clases--fondo .clases--texto h2 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .clases .clases--clases .clases--fondo .clases--texto p {
+    font-size: 1.5rem;
+  }
+  .clases .clases--clases .clases--fondo .lio {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases {
+    display: inline-block;
+    width: 50%;
+    border-radius: 50%;
+    text-align: left;
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--1 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Barbarian.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--2 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Bard.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--3 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Warlock.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--4 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Cleric.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--5 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Druid.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--6 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Ranger.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--7 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Fighter.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--8 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Sorcerer.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--9 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Wizard.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--10 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Monk.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--11 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Paladin.jpg);
+  }
+  .clases .clases--clases .clases--fondo .lio .lio--contenedor .lio--clases .clase--12 {
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 5.5rem;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: 2px solid rgb(243, 234, 223);
+    text-align: center;
+    background-image: url(../assets/img/Rogue.jpg);
+  }
+  .clases #popup1 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup1:target {
+    display: block;
+  }
+  .clases #popup2 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup2:target {
+    display: block;
+  }
+  .clases #popup3 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup3:target {
+    display: block;
+  }
+  .clases #popup4 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup4:target {
+    display: block;
+  }
+  .clases #popup5 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup5:target {
+    display: block;
+  }
+  .clases #popup6 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup6:target {
+    display: block;
+  }
+  .clases #popup7 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup7:target {
+    display: block;
+  }
+  .clases #popup8 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup8:target {
+    display: block;
+  }
+  .clases #popup9 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup9:target {
+    display: block;
+  }
+  .clases #popup10 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup10:target {
+    display: block;
+  }
+  .clases #popup11 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup11:target {
+    display: block;
+  }
+  .clases #popup12 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    width: 50%;
+    background-color: rgb(243, 234, 223);
+  }
+  .clases #popup12:target {
+    display: block;
+  }
+  .clases .clases--video {
+    margin-bottom: 10vh;
+  }
+  .clases .clases--video div {
+    text-align: center;
+  }
+  .clases .clases--video div p {
+    margin-bottom: 5vh;
+    font-size: 1.5rem;
+  }
+  .clases .clases--video div p span {
+    color: #BD332D;
+  }
+  .clases .clases--video div div div iframe {
+    width: 550px;
+    height: 315px;
+  }
+}
+/*uy aca fue un dolor de cabeza, pero bueno el carrusel quedo bien al final asi que nada
+sufri pero valio la pena*/
+@media (max-width: 1000px) {
+  .razas .razas--titulo {
+    background-image: url(../assets/img/razatitulo.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+  }
+  .razas .razas--titulo div {
+    color: #F2F2F2;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+  .razas .razas--titulo div h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #F2F2F2;
+  }
+  .razas .razas--carrusel {
+    background-image: url(../assets/img/fondocarru.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    text-align: center;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+  .razas .razas--carrusel section .carrusel img {
+    height: 600px;
+    width: 100%;
+    filter: brightness(0.7);
+  }
+  .razas .razas--texto {
+    text-align: center;
+    margin-left: 10%;
+    width: 80%;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+  .razas .razas--texto h3 {
+    font-size: 1.5rem;
+  }
+  .razas .razas--texto span {
+    color: #BD332D;
+  }
+  .razas .razas--video {
+    margin-bottom: 10vh;
+  }
+  .razas .razas--video div {
+    text-align: center;
+  }
+  .razas .razas--video div p {
+    margin-bottom: 5vh;
+    font-size: 1.5rem;
+  }
+  .razas .razas--video div div div iframe {
+    width: 360px;
+    height: 215px;
+  }
+}
+@media (min-width: 1000px) {
+  .razas .razas--titulo {
+    background-image: url(../assets/img/razatitulo.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+  }
+  .razas .razas--titulo div {
+    color: #F2F2F2;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+  .razas .razas--titulo div h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #F2F2F2;
+  }
+  .razas .razas--carrusel {
+    background-image: url(../assets/img/fondocarru.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+  }
+  .razas .razas--carrusel section {
+    margin-left: 35%;
+    width: 30%;
+  }
+  .razas .razas--carrusel section .carrusel img {
+    height: 600px;
+    width: 100%;
+    filter: brightness(0.8);
+  }
+  .razas .razas--texto {
+    text-align: center;
+    margin-left: 35%;
+    width: 30%;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+  .razas .razas--texto h3 {
+    font-size: 1.5rem;
+  }
+  .razas .razas--texto span {
+    color: #BD332D;
+  }
+  .razas .razas--video {
+    margin-bottom: 10vh;
+  }
+  .razas .razas--video div {
+    text-align: center;
+  }
+  .razas .razas--video div p {
+    margin-bottom: 5vh;
+    font-size: 1.5rem;
+  }
+  .razas .razas--video div div div iframe {
+    width: 550px;
+    height: 315px;
+  }
+}
+/*La verdad me gustaria haberle agregado mas contenido pero no sabia muy bien que añadir
+use extend aca pero para tenerlo nomas, espero que cuente jeje*/
+@media (max-width: 600px) {
+  .bgcosas, .trasfondo section .soldado, .trasfondo section .criminal, .trasfondo section .noble, .trasfondo .trasfondo--titulo {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .trasfondo .trasfondo--titulo {
+    background-image: url(../assets/img/tclases.jpg);
+    text-align: center;
+  }
+  .trasfondo .trasfondo--titulo div {
+    color: #F2F2F2;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+  .trasfondo .trasfondo--titulo div h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #F2F2F2;
+  }
+  .trasfondo .trasfondo--texto {
+    text-align: center;
+    font-size: 1.5rem;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 5vh;
+  }
+  .trasfondo .trasfondo--texto p span {
+    color: #BD332D;
+  }
+  .trasfondo .trasfondo--video {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+  .trasfondo .trasfondo--video div {
+    text-align: center;
+  }
+  .trasfondo .trasfondo--video div iframe {
+    width: 360px;
+    height: 215px;
+  }
+  .trasfondo section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .trasfondo section div h2 {
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 2rem;
+    margin-top: 5rem;
+  }
+  .trasfondo section .caja {
+    display: flex;
+    border: 2px solid black;
+    background-color: bisque;
+    color: white;
+    width: 300px;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+  }
+  .trasfondo section .noble {
+    background-image: url(../assets/img/noble.jpg);
+    order: 1;
+  }
+  .trasfondo section .criminal {
+    background-image: url(../assets/img/criminal.jpeg);
+    order: 2;
+  }
+  .trasfondo section .soldado {
+    background-image: url(../assets/img/soldado.jpeg);
+    order: 3;
+  }
+}
+@media (min-width: 600px) {
+  .trasfondo .trasfondo--titulo {
+    background-image: url(../assets/img/tclases.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+  }
+  .trasfondo .trasfondo--titulo div {
+    color: #F2F2F2;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+  .trasfondo .trasfondo--titulo div h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #F2F2F2;
+  }
+  .trasfondo .trasfondo--texto {
+    text-align: center;
+    font-size: 1.5rem;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 5vh;
+  }
+  .trasfondo .trasfondo--texto p span {
+    color: #BD332D;
+  }
+  .trasfondo .trasfondo--video {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+  .trasfondo .trasfondo--video div {
+    text-align: center;
+  }
+  .trasfondo .trasfondo--video div iframe {
+    width: 550px;
+    height: 315px;
+  }
+  .trasfondo section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .trasfondo section div h2 {
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 2rem;
+    margin-top: 5rem;
+  }
+  .trasfondo section .caja {
+    display: flex;
+    border: 2px solid black;
+    background-color: bisque;
+    color: white;
+    width: 300px;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+  }
+  .trasfondo section .noble {
+    background-image: url(../assets/img/noble.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    order: 1;
+  }
+  .trasfondo section .criminal {
+    background-image: url(../assets/img/criminal.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    order: 2;
+  }
+  .trasfondo section .soldado {
+    background-image: url(../assets/img/soldado.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    order: 3;
+  }
+}
+/*Contacto, muy basico, puse la form de bootstrap creoo con alguna q otra modificacion
+mia y bueno el boton al final que lo robe directamente de una pagina, mepa que quedo sencillo pero digno(?*/
+@media (max-width: 600px) {
+  .contacto {
+    /*Bueno este boton claramente no lo hice yo, la pagina la estoy
+    basando en https://dnd.wizards.com/es y bueno aproveche este boton
+    porque ta divino*/
+  }
+  .contacto .contacto--titulo {
+    background-image: url(../assets/img/tcontacto.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+  }
+  .contacto .contacto--titulo div {
+    color: #F2F2F2;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+  .contacto .contacto--titulo div h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #F2F2F2;
+  }
+  .contacto .contacto--texto {
+    text-align: center;
+    font-size: 1.5rem;
+    width: 60%;
+    margin-left: 20%;
+  }
+  .contacto .contacto--texto p span {
+    color: #BD332D;
+  }
+  .contacto .css-e6ii3 {
+    margin-left: 10%;
+    margin-bottom: 10vh;
+    --button-crop-size: 16px;
+    align-items: center;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    min-height: 64px;
+    vertical-align: middle;
+    padding: 15px 42px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    letter-spacing: 2.26px;
+    line-height: 1.6875;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    background: #9e0b0f;
+    background-image: linear-gradient(90deg, #9e0b0f, #ce1016);
+    border: 2px solid #e61720;
+    border-radius: 0;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.1s ease-out;
+    position: relative;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--button-crop-size)), calc(100% - var(--button-crop-size)) 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--button-crop-size)), calc(100% - var(--button-crop-size)) 100%, 0 100%);
+    z-index: 2;
+  }
+}
+@media (min-width: 600px) {
+  .contacto .contacto--titulo {
+    background-image: url(../assets/img/tcontacto.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+  }
+  .contacto .contacto--titulo div {
+    color: #F2F2F2;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+  .contacto .contacto--titulo div h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #F2F2F2;
+  }
+  .contacto .contacto--texto {
+    text-align: center;
+    font-size: 1.5rem;
+    width: 60%;
+    margin-left: 20%;
+  }
+  .contacto .contacto--texto p span {
+    color: #BD332D;
+  }
+  .contacto .css-e6ii3 {
+    margin-left: 40%;
+    margin-bottom: 10vh;
+    --button-crop-size: 16px;
+    align-items: center;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    min-height: 64px;
+    vertical-align: middle;
+    padding: 15px 42px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    letter-spacing: 2.26px;
+    line-height: 1.6875;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    background: #9e0b0f;
+    background-image: linear-gradient(90deg, #9e0b0f, #ce1016);
+    border: 2px solid #e61720;
+    border-radius: 0;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.1s ease-out;
+    position: relative;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--button-crop-size)), calc(100% - var(--button-crop-size)) 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--button-crop-size)), calc(100% - var(--button-crop-size)) 100%, 0 100%);
+    z-index: 2;
+  }
+}
+.error {
+  height: 90vh;
+}
+.error .error--fondo {
+  background-image: url(../assets/img/404.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 90vh;
+}
+.error .error--fondo .error--texto {
+  text-align: center;
+  color: #F2F2F2;
+}
+.error .error--fondo .error--texto h1 {
+  padding-top: 30vh;
+  font-size: 4rem;
+}
+
+/*# sourceMappingURL=styles.css.map */

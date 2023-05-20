@@ -1,0 +1,194 @@
+/*La verdad me gustaria haberle agregado mas contenido pero no sabia muy bien que añadir
+use extend aca pero para tenerlo nomas, espero que cuente jeje*/
+@media (max-width: 600px) {
+    .bgcosas {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .trasfondo {
+        .trasfondo--titulo {
+            @extend .bgcosas;
+            background-image: url(../assets/img/tclases.jpg);
+            text-align: center;
+    
+            div {
+                color: $GRISES-4-hex;
+                padding-right: 5rem;
+                padding-left: 5rem;
+                padding-top: 10rem;
+                padding-bottom: 10rem;
+    
+                h1 {
+                    font-size: 3rem;
+                    font-weight: 700;
+                    color: $GRISES-4-hex;
+                }
+    
+            }
+        }
+        .trasfondo--texto {
+            text-align: center;
+            font-size: 1.5rem;
+            width: 60%;
+            margin-left: 20%;
+            margin-top: 5vh;
+            p{
+                span{
+                    color: $ROJOS-3-hex;
+                }
+            }
+        }
+        .trasfondo--video {
+            margin-top: 5vh;
+            margin-bottom: 5vh;
+            div {
+                text-align: center;
+                        iframe {
+                            width: 360px;
+                            height: 215px;
+                        }
+            }
+        }
+        section {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            div{
+                h2{
+                    color: rgb(255, 255, 255);
+                    font-weight: 500;
+                    font-size: 2rem;
+                    margin-top: 5rem;
+                }
+            }
+            .caja {
+                display: flex;
+                border: 2px solid black;
+                background-color: bisque;
+                color: white;
+                width: 300px;
+                height: 300px;
+                align-items: center;
+                justify-content: center;
+                margin: 2rem;
+            }
+
+            .noble {
+                @extend .bgcosas;
+                background-image: url(../assets/img/noble.jpg);
+                order: 1;
+            }
+            
+            .criminal {
+                @extend .bgcosas;
+                background-image: url(../assets/img/criminal.jpeg);
+                order: 2;
+            }
+            
+            .soldado {
+                @extend .bgcosas;
+                background-image: url(../assets/img/soldado.jpeg);
+                order: 3;
+            }
+        }
+    }
+}
+@media (min-width: 600px) {
+    .trasfondo {
+        .trasfondo--titulo {
+            background-image: url(../assets/img/tclases.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+    
+            div {
+                color: $GRISES-4-hex;
+                padding-right: 5rem;
+                padding-left: 5rem;
+                padding-top: 10rem;
+                padding-bottom: 10rem;
+    
+                h1 {
+                    font-size: 3rem;
+                    font-weight: 700;
+                    color: $GRISES-4-hex;
+                }
+    
+            }
+        }
+        .trasfondo--texto {
+            text-align: center;
+            font-size: 1.5rem;
+            width: 60%;
+            margin-left: 20%;
+            margin-top: 5vh;
+            p{
+                span{
+                    color: $ROJOS-3-hex;
+                }
+            }
+        }
+        .trasfondo--video {
+            margin-top: 5vh;
+            margin-bottom: 5vh;
+            div {
+                text-align: center;
+                        iframe {
+                            width: 550px;
+                            height: 315px;
+                        }
+            }
+        }
+        section {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            div{
+                h2{
+                    color: rgb(255, 255, 255);
+                    font-weight: 500;
+                    font-size: 2rem;
+                    margin-top: 5rem;
+                }
+            }
+            .caja {
+                display: flex;
+                border: 2px solid black;
+                background-color: bisque;
+                color: white;
+                width: 300px;
+                height: 300px;
+                align-items: center;
+                justify-content: center;
+                margin: 2rem;
+            }
+            .noble {
+                background-image: url(../assets/img/noble.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                order: 1;
+            }
+            
+            .criminal {
+                background-image: url(../assets/img/criminal.jpeg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                order: 2;
+            }
+            
+            .soldado {
+                background-image: url(../assets/img/soldado.jpeg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                order: 3;
+            }
+        }
+    }
+}

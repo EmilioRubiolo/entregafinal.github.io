@@ -1,0 +1,442 @@
+/*Clases, aca puse unos popup que son feos esteticamente pero ahi estan, al menos dan la info
+me parece que quedo facherito todo lo otro, pero bueno si los popup son un rectangulo con texto*/
+
+@media (max-width: 600px) {
+    .clases {
+        width: 100%;
+    
+        .clases--titulo {
+    
+            background-image: url(../assets/img/clasestitulo1.jpeg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+    
+            div {
+                color: $GRISES-4-hex;
+                padding-right: 5rem;
+                padding-left: 5rem;
+                padding-top: 10rem;
+                padding-bottom: 10rem;
+    
+                h1 {
+                    font-size: 3rem;
+                    font-weight: 700;
+                    color: $GRISES-4-hex;
+                }
+    
+            }
+        }
+    
+        .clases--clases {
+            .clases--fondo {
+                background-image: url(../assets/img/clasefondo.jpeg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                width: 100%;
+                margin-top: 10vh;
+                margin-bottom: 10vh;
+                padding: 2rem;
+                color: $GRISES-4-hex;
+                text-align: center;
+    
+                .clases--texto {
+                    margin-top: 5vh;
+                    h2 {
+                        font-size: 2rem;
+                        font-weight: 700;
+                    }
+    
+                    p {
+                        font-size: 1.5rem;
+                    }
+                }
+    
+                .lio {
+                    margin-top: 5vh;
+                    margin-bottom: 5vh;
+                    .lio--contenedor {
+                        .lio--clases {
+                            display: inline-block;
+                            width: 50%;
+                            border-radius: 50%;
+                            text-align: left;
+                            .clase--1 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Barbarian.jpg);
+                            }
+                            .clase--2 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Bard.jpg);
+                            }
+                            .clase--3 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Warlock.jpg);
+                            }
+                            .clase--4 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Cleric.jpg);
+                            }
+                            .clase--5 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Druid.jpg);
+                            }
+                            .clase--6 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Ranger.jpg);
+                            }
+                            .clase--7 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Fighter.jpg);
+                            }
+                            .clase--8 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Sorcerer.jpg);
+                            }
+                            .clase--9 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Wizard.jpg);
+                            }
+                            .clase--10 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Monk.jpg);
+                            }
+                            .clase--11 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Paladin.jpg);
+                            }
+                            .clase--12 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Rogue.jpg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #popup1 {
+            @include caja--popup;
+        }
+        #popup1:target{
+            display: block;
+        }
+        #popup2 {
+            @include caja--popup;
+        }
+        #popup2:target{
+            display: block;
+        }
+        #popup3 {
+            @include caja--popup;
+        }
+        #popup3:target{
+            display: block;
+        }
+        #popup4 {
+            @include caja--popup;
+        }
+        #popup4:target{
+            display: block;
+        }
+        #popup5 {
+            @include caja--popup;
+        }
+        #popup5:target{
+            display: block;
+        }
+        #popup6 {
+            @include caja--popup;
+        }
+        #popup6:target{
+            display: block;
+        }
+        #popup7 {
+            @include caja--popup;
+        }
+        #popup7:target{
+            display: block;
+        }
+        #popup8 {
+            @include caja--popup;
+        }
+        #popup8:target{
+            display: block;
+        }
+        #popup9 {
+            @include caja--popup;
+        }
+        #popup9:target{
+            display: block;
+        }
+        #popup10 {
+            @include caja--popup;
+        }
+        #popup10:target{
+            display: block;
+        }
+        #popup11 {
+            @include caja--popup;
+        }
+        #popup11:target{
+            display: block;
+        }
+        #popup12 {
+            @include caja--popup;
+        }
+        #popup12:target{
+            display: block;
+        }
+
+        .clases--video {
+            margin-bottom: 10vh;
+            div {
+                text-align: center;
+                p {
+                    margin-bottom: 5vh;
+                    font-size: 1.5rem;
+                    span {
+                        color: #BD332D;
+                    }
+                }
+                div{
+                    div{
+                        iframe {
+                            width: 360px;
+                            height: 215px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+@media (min-width: 600px) {
+    .clases {
+        width: 100%;
+    
+        .clases--titulo {
+    
+            background-image: url(../assets/img/clasestitulo1.jpeg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+    
+            div {
+                color: $GRISES-4-hex;
+                padding-right: 5rem;
+                padding-left: 5rem;
+                padding-top: 10rem;
+                padding-bottom: 10rem;
+    
+                h1 {
+                    font-size: 3rem;
+                    font-weight: 700;
+                    color: $GRISES-4-hex;
+                }
+    
+            }
+        }
+    
+        .clases--clases {
+            .clases--fondo {
+                background-image: url(../assets/img/clasefondo1.jpeg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                width: 80%;
+                margin-left: 10%;
+                margin-right: 10%;
+                margin-top: 10vh;
+                margin-bottom: 10vh;
+                padding: 2rem;
+                color: $GRISES-4-hex;
+                text-align: left;
+    
+                .clases--texto {
+                    width: 40%;
+                    margin-top: 5vh;
+                    margin-left: 5%;
+                    h2 {
+                        font-size: 2rem;
+                        font-weight: 700;
+                    }
+    
+                    p {
+                        font-size: 1.5rem;
+                    }
+                }
+    
+                .lio {
+                    margin-top: 5vh;
+                    margin-bottom: 5vh;
+                    .lio--contenedor {
+                        .lio--clases {
+                            display: inline-block;
+                            width: 50%;
+                            border-radius: 50%;
+                            text-align: left;
+                            .clase--1 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Barbarian.jpg);
+                            }
+                            .clase--2 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Bard.jpg);
+                            }
+                            .clase--3 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Warlock.jpg);
+                            }
+                            .clase--4 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Cleric.jpg);
+                            }
+                            .clase--5 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Druid.jpg);
+                            }
+                            .clase--6 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Ranger.jpg);
+                            }
+                            .clase--7 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Fighter.jpg);
+                            }
+                            .clase--8 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Sorcerer.jpg);
+                            }
+                            .clase--9 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Wizard.jpg);
+                            }
+                            .clase--10 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Monk.jpg);
+                            }
+                            .clase--11 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Paladin.jpg);
+                            }
+                            .clase--12 {
+                                @include caja--clases;
+                                background-image: url(../assets/img/Rogue.jpg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #popup1 {
+            @include caja--popup;
+        }
+        #popup1:target{
+            display: block;
+        }
+        #popup2 {
+            @include caja--popup;
+        }
+        #popup2:target{
+            display: block;
+        }
+        #popup3 {
+            @include caja--popup;
+        }
+        #popup3:target{
+            display: block;
+        }
+        #popup4 {
+            @include caja--popup;
+        }
+        #popup4:target{
+            display: block;
+        }
+        #popup5 {
+            @include caja--popup;
+        }
+        #popup5:target{
+            display: block;
+        }
+        #popup6 {
+            @include caja--popup;
+        }
+        #popup6:target{
+            display: block;
+        }
+        #popup7 {
+            @include caja--popup;
+        }
+        #popup7:target{
+            display: block;
+        }
+        #popup8 {
+            @include caja--popup;
+        }
+        #popup8:target{
+            display: block;
+        }
+        #popup9 {
+            @include caja--popup;
+        }
+        #popup9:target{
+            display: block;
+        }
+        #popup10 {
+            @include caja--popup;
+        }
+        #popup10:target{
+            display: block;
+        }
+        #popup11 {
+            @include caja--popup;
+        }
+        #popup11:target{
+            display: block;
+        }
+        #popup12 {
+            @include caja--popup;
+        }
+        #popup12:target{
+            display: block;
+        }
+
+        .clases--video {
+            margin-bottom: 10vh;
+            div {
+                text-align: center;
+                p {
+                    margin-bottom: 5vh;
+                    font-size: 1.5rem;
+                    span {
+                        color: #BD332D;
+                    }
+                }
+                div{
+                    div{
+                        iframe {
+                            width: 550px;
+                            height: 315px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
